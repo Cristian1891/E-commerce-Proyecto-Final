@@ -41,7 +41,7 @@ botones.forEach((boton)=>{
 async function cargarDatosProductos(section){
     try {
         seccion = section || "bebidas";
-        const response = await fetch(`./data/${seccion}.json`);
+        const response = await fetch(`data/${seccion}.json`);
         if (!response.ok) {
             throw new Error('No se pudieron cargar los datos.');
         }
@@ -54,7 +54,7 @@ async function cargarDatosProductos(section){
 
 async function cargarDatosMenu(){
     try {
-        const response = await fetch(`./data/menu.json`);
+        const response = await fetch(`data/menu.json`);
         if (!response.ok) {
             throw new Error('No se pudieron cargar los datos.');
         }
