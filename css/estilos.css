@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500;1,700;1,900&display=swap');
+
+
+
+/* Globales */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Fuentes*/
+.mediumItalic{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.boldItalic{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
+.blackItalic{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+/*Paleta de colores*/
+.colorCian{
+    color: #48CFC1;
+}
+
+.colorWhite{
+    color: #FFFFFF;
+}
+
+.colorBlack{
+    color: #000000;
+}
+
+.colorYellowDark{
+    color: #FACE7F;
+}
+
+.colorYellow{
+    color: #FFFF00;
+}
+
+.bgColorBlack{
+    background: #000000;
+}
+
+.bgColorRed {
+    background: #C00A0A;
+}
+
+.bgColorCian{
+    background: #48CFC1;
+}
+
+.bgColorYellowDark{
+    background: #FACE7F;
+}
+
+/*Utilidades*/
+h1{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 200%;
+    text-align: justify;
+    
+}
+
+a{
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    text-decoration: none!important;
+    text-transform: uppercase;
+}
+
+.boton{
+    padding: 1rem 2rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+}
+  
+.boton:hover{
+    background-color: #ffff00;
+    color: #000000;
+}
+
+.boton1 {
+    padding: 1rem 2rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+}
+  
+.boton1:hover {
+    color: #FFFFFF;
+}
+
+i{
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none!important;
+}
+
+.cont-prod .ocultar-slide{
+    display: none;
+}
+
+/*NavBar*/
+.navigate li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+}
+
+.navigate li a:hover {
+    color: #FFFF00;
+}
+
+.nav-item img{
+    height: 70px;
+    width: 80px;
+}
+
+#menu-color a{
+    border: 2px solid #000000;
+}
+
+#menu-color a:hover{
+    color: #000000;
+}
+
+#menu-color .dropdown-menu{
+    background-color: #FFFFFF!important;
+}
+
+.cambio{
+    color: #000000!important;
+}
+
+.cambio:hover{
+    color: #FFFF00!important;
+}
+
+.nav-item img:hover{
+    cursor: pointer;
+}
+
+.tabla-carrito table { 
+    min-width: 600px; 
+}
+
+.dropdown-item{
+    background-color: #0d6efd!important;
+    color: black;
+}
+
+.dropdown-menu{
+    background-color: #0d6efd!important;
+    border: 2px solid black!important;
+    padding: 0!important;
+}
+
+.dropdown-item:hover {
+    background-color: #FFFF00!important;
+    color: black!important;
+}
+
+
+#notificacion{
+    height: 25px;
+    width: 25px;
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 4rem;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #C00A0A;
+    color: #e1e1e1;
+
+}
+
+/*Cambio de color y de color de fondo de boton responsive*/
+.navbar-dark .navbar-toggler{
+    background-color: black;
+}
+  
+.navbar-dark .navbar-toggler  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 221, 39, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+/*The next 3 sections make the magic happen*/
+#lista-carrito thead, #lista-carrito tbody, #lista-carrito tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#lista-carrito tbody {
+    display: block;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#lista-carrito td {
+    overflow: hidden;
+}
+
+.tabla-carrito th{
+    border: none!important;
+}
+
+
+/*Seccion principal*/
+.carousel-caption {
+    position: absolute;
+    right: 5%;
+    bottom: 40%;
+    left: 5%;
+    top: 35%;
+    z-index: 10;
+    text-align: center;
+}
+
+.carousel-caption h1 {
+    font-size: 48px;
+    text-align: center;
+}
+
+.carousel-caption p {
+    font-size: 36px;
+    text-align: center;
+}
+
+#seccion-principal {
+    overflow: hidden;
+    padding-top: 7.5rem;
+}
+
+/*Nosotros*/
+
+.cont-nos {
+    display: flex;;
+    flex-direction: row;
+    padding: 8em 5rem;
+}
+
+.cont-der {
+    margin-left: 6rem;
+    margin-top: 1em;
+}
+
+.cont-der img {
+    max-width: 500px;
+    max-height: 270px;
+}
+
+.cont-izq h2 {
+    font-size: 32px;
+}
+
+/*Productos*/
+
+.cont-barra{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+}
+
+.tit-sect{
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.tit-sect h2{
+    border-left: 4px solid #48CFC1;
+    padding-left: 1rem;
+}
+
+.cont-lista{
+    display: flex;
+    align-items: center;
+}
+
+
+.navegacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 3rem;
+}
+
+.navegacion li{
+    padding-right: 3rem;
+}
+.navegacion li a:hover{
+    color:  #48CFC1;
+}
+
+#productos-ecommerce{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+/* #bebidas1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#lacteos{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#lacteos1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#fiambres{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#fiambres1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#golosinas{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#golosinas1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#snacks{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#snacks1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#limpieza{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#limpieza1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#otros{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+}
+
+#otros1{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    margin: 2rem 0;
+} */
+
+/* .cards-productos{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
+}  */
+
+/* .info-prod{
+    margin-top: 8rem;
+    padding-bottom: 8rem;
+} */
+
+.card-prod{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #48CFC1;
+    padding: 2rem 0;
+    /* margin-bottom: 2rem; */
+}
+
+/* .ocultar {
+    display: none;
+} */
+
+/* .slide{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .slide li{
+    list-style: none;
+    margin: 0 3rem;
+}
+
+.slide li i:hover{
+    cursor: pointer;
+} */
+
+
+/*Envios*/
+.cont-envios{
+    background-image: url("../img/envios.jpg");
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 12rem 0 15rem 0;
+    text-align: center;
+}
+
+.cont-envios p{
+    text-align: center;
+}
+
+/*Menu*/
+.cont-menu{
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cont-menu .ocultar-menu {
+    display: none;
+}
+
+#cards-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cards-menu1{
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#cards-menu2{
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenido-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #48CFC1;
+    padding: 2rem 2rem;
+}
+
+
+.slide-menu{
+    margin: 5em 0 3em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-menu li{
+    list-style: none;
+    margin: 0 3rem;
+}
+
+.slide-menu li i:hover{
+    cursor: pointer;
+}
+
+
+/*Footer*/
+.contFoot{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cont-arriba{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.iconos li{
+    list-style: none;
+    display: inline;
+}
+
+.iconos li a {
+    color: #FFFFFF;
+}
+
+.iconos li a:hover {
+    color: #FACE7F;
+}
+
+
+.cont-abajo {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.cont-abajo p {
+    display: inline;
+    text-align: center;
+}
+
+
+/*Paginas interiores*/
+
+/*Envios*/
+.contacto {
+    padding: 14rem 0;
+    overflow: hidden;
+}
+
+.contacto h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.cont-pagContacto {
+    margin: 4em 15rem;
+    font-size: 20px;
+}
+
+.cont-pagContacto img {
+    width: 100%;
+    height: 900px;
+    margin-bottom: 5em;
+}
+
+.cont-pagContacto h3 {
+    font-size: 28px;
+}
+
+textarea {
+    border-color: #ced4da !important;
+    padding: .5em .5rem 10em .5rem !important;
+}
+
+/*Compra*/
+/* .col{
+    margin: 5rem 0;
+} */
+
+#cargando{
+    display: none;
+    height: 200px;
+    width: 250px;
+}
+
+

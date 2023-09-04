@@ -1,0 +1,86 @@
+[
+    {
+        "id": 25,
+        "nombre": "Bondiola Fox 100gr",
+        "precio": 200,
+        "img": "bondiolaFox.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 26,
+        "nombre": "Jamón Cocido 214 100gr",
+        "precio": 80,
+        "img": "jamonCocido.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 27,
+        "nombre": "Jamón Crudo Fox 100g",
+        "precio": 280,
+        "img": "jamonCrudoFox.png",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 28,
+        "nombre": "Matambre Paladini 100gr",
+        "precio": 130,
+        "img": "matambre.png",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 29,
+        "nombre": "Mortadela 214 100gr",
+        "precio": 80,
+        "img": "mortadela214.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 30,
+        "nombre": "Panceta Fox 100gr",
+        "precio": 130,
+        "img": "pancetaFox.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 31,
+        "nombre": "Cheddar La Serenisima 100gr",
+        "precio": 140,
+        "img": "quesoCheddar.jpg", 
+        "categoria": "fiambres"
+    },
+    {
+        "id": 32,
+        "nombre": "Queso Cremoso Lacteal 1k",
+        "precio": 600,
+        "img": "quesoLacteal.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 33,
+        "nombre": "Muzzarella La Paulina 1k",
+        "precio": 680,
+        "img": "quesoLaPaulina.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 34,
+        "nombre": "Queso Punta del Agua 100gr",
+        "precio": 80,
+        "img": "quesoPuntaDeAgua.jpg",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 35,
+        "nombre": "Salame Calchaqui 100gr",
+        "precio": 120,
+        "img": "salameCalchaqui.png",
+        "categoria": "fiambres"
+    },
+    {
+        "id": 36,
+        "nombre": "Salchichon 214 100gr",
+        "precio": 60,
+        "img": "salchichon214.jpg",
+        "categoria": "fiambres"
+    }
+]

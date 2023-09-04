@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="../css/estilos.css"> 
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/sweetalert2/css/sweetalert2.min.css">  
+    <script src="https://kit.fontawesome.com/7ca5c60032.js" crossorigin="anonymous"></script>
+    <title>Contacto</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand ms-5" href="../index.html">
+              <img src="../img/logo.png" alt="" width="100" height="100">
+            </a>
+        </div>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#nosotros" class="scrolear boldItalic">Nosotros</a></li>
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#productos" class="scrolear boldItalic">Productos</a></li>
+              <li class="nav-item dropdown ">
+                <a href="#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacto
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a href="../paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#menu" class="scrolear boldItalic">Menú</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <section class="contacto">
+        <h2 class="boldItalic colorBlack">Contacto</h2>
+        <div class="cont-pagContacto colorBlack">
+            <img src="../img/contacto.jpg" alt="destacada3">
+            <h3 class="mediumItalic text-center">Llene el formulario de Contacto</h3>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="shadow-lg border border-info p-3 mb-2 mt-4  bg-body rounded">
+                            <form class="needs-validation mediumItalic " novalidate>
+                                <div class="col-md-12 mb-3">
+                                    <label for="nombre" class="form-label">Nombre:</label>
+                                    <input id="nombre" name="nombre" type="text" autocomplete="off" 
+                                    class="form-control" placeholder="Ingrese su nombre" pattern="[A-Za-z\s]+"
+                                    required>
+                                    <div class="valid-feedback">
+                                        Campo Valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Completar con su nombre
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="apellido" class="form-label">Apellido:</label>
+                                    <input id="apellido" type="text" autocomplete="off" 
+                                    class="form-control" placeholder="Ingrese su apellido" pattern="[A-Za-z]+" required>
+                                    <div class="valid-feedback">
+                                        Campo valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Completar con su apellido
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="telefono">Telefono:</label>
+                                    <input id="telefono" type="tel" autocomplete="off" 
+                                    placeholder="Ingrese el numero de su telefono móvil" class="form-control" 
+                                    pattern="([0-9]{8}|[0-9]{10})" required>
+                                    <div class="valid-feedback">
+                                        Campo valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Completar con su telefono (mínimo de 8 números o máximo de 10 números)
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="email">Email:</label>
+                                    <input id="email" type="email" autocomplete="off" 
+                                    placeholder="Ingrese su email" class="form-control" required>
+                                    <div class="valid-feedback">
+                                        Campo valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Completar con su email (ejemplo@gmail.com o ejemplo@hotmail.com)
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea id="mensaje" placeholder="Tu Mensaje" autocomplete="off" 
+                                    class="form-control border rounded" required></textarea>
+                                    <div class="valid-feedback">
+                                        Campo valido
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Completar con su mensaje 
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3 mt-5">
+                                    <input class="boton1 mediumItalic bgColorRed colorWhite me-3" type="submit" value="Enviar">
+                                    <input type="reset" name="resetear" value="Borrar todo" class="boton1 mediumItalic bgColorRed colorWhite me-2">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="contFoot bgColorBlack colorWhite">
+            <div class="cont-arriba">
+                <ul class="iconos">
+                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
+                <p>Días y horarios de atención:</p>
+                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
+                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
+            </div>
+            <div class="cont-abajo ">
+                <p>Todos los Derechos Reservados 2021</p>
+                <i class="far fa-copyright"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script> 
+    <script src="../lib/sweetalert2/js/sweetalert2.min.js"></script>
+    <script src="../js/contacto.js"></script>
+</body>
+</html>

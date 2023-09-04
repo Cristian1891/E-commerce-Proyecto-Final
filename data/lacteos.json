@@ -1,0 +1,86 @@
+[
+    {
+        "id": 13,
+        "nombre": "Casancrem Clásico 290gr",
+        "precio": 220,
+        "img": "casancrem.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 14,
+        "nombre": "Crema La Serenisima 330ml",
+        "precio": 160,
+        "img": "cremaBatir.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 15,
+        "nombre": "Danette Chocolate 195gr",
+        "precio": 70,
+        "img": "danette.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 16,
+        "nombre": "Dulce de leche 400gr",
+        "precio": 140,
+        "img": "dulceDeLeche.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 17,
+        "nombre": "Leche La Serenisima 1lt",
+        "precio": 100,
+        "img": "leche.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 18,
+        "nombre": "Manteca La Serenisima 100gr",
+        "precio": 140,
+        "img": "manteca.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 19,
+        "nombre": "Queso Punta del Agua 100gr",
+        "precio": 150,
+        "img": "quesoPunta.jpg", 
+        "categoria": "lacteos"
+    },
+    {
+        "id": 20,
+        "nombre": "Queso La Serenisima 80gr",
+        "precio": 130,
+        "img": "quesoReggianito.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 21,
+        "nombre": "Serenito Vainilla 120gr",
+        "precio": 80,
+        "img": "serenito.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 22,
+        "nombre": "Yogur con Cereales 159gr",
+        "precio": 90,
+        "img": "yogurCereales.png",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 23,
+        "nombre": "Yogur Firme Frutilla 190gr",
+        "precio": 70,
+        "img": "yogurFirme.jpg",
+        "categoria": "lacteos"
+    },
+    {
+        "id": 24,
+        "nombre": "Yogur Bebible Frutilla 900gr",
+        "precio": 150,
+        "img": "yogurSacheFrutilla.jpg",
+        "categoria": "lacteos"
+    }
+]

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/7ca5c60032.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../lib/sweetalert2/css/sweetalert2.min.css">
+    <title>Compra</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand ms-5" href="../index.html">
+              <img src="../img/logo.png" alt="" width="100" height="100">
+            </a>
+        </div>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#nosotros" class="scrolear boldItalic">Nosotros</a></li>
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#productos" class="scrolear boldItalic">Productos</a></li>
+              <li class="nav-item dropdown ">
+                <a href="../index.html#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacto
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a href="../paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item pt-4 pe-4"><a href="../index.html#menu" class="scrolear boldItalic">Menú</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <h2 class="d-flex justify-content-center boldItalic my-5">Compra</h2>
+                    <form id="procesar-pago">
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-1 col-form-label mediumItalic h2">Cliente :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control mediumItalic " id="cliente"
+                                    placeholder="Ingresa tu nombre completo" name="destinatario" required>
+                            </div>
+                        </div>
+                        <div class="form-group row my-3">
+                            <label for="email" class="col-12 col-md-1 col-form-label mediumItalic h2">Correo :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="email" class="form-control mediumItalic" id="correo" placeholder="Ingresa tu correo" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label for="direccion" class="col-12 col-md-1 col-form-label mediumItalic h2">Direccion :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control mediumItalic " id="direccion" name="direccion" placeholder="Ingresa tu direccion" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-5">
+                            <label for="telefono" class="col-12 col-md-1 col-form-label mediumItalic h2">Teléfono :</label>
+                            <div class="col-12 col-md-10">
+                                <input type="tel" class="form-control mediumItalic " id="telefono" name="telefono" placeholder="Ingresa tu telefono" required>
+                            </div>
+                        </div>
+                        <div id="carrito" class="form-group table-responsive" >
+                            <table class="table mediumItalic" id="lista-compra" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Sub Total</th>
+                                        <th scope="col">Eliminar</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                                
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th class="mediumItalic">TOTAL :</th>
+                                    <th scope="col">
+                                        <input  type="text" id="total"  name="total" class="mediumItalic font-weight-bold border-0" readonly style="background-color: white;">
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                        <div class="row justify-content-center" id="loaders">
+                            <img id="cargando" src="../img/cargando.gif" width="70">
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-between my-5">
+                            <div class="col-md-4 mb-2">
+                                <a href="../index.html" class="mediumItalic btn btn-warning btn-block">Seguir comprando</a>
+                            </div>
+                            <div class=" col-md-2">
+                                <input type="submit" class="mediumItalic btn btn-success btn-block text-uppercase" id="procesar-compra" value="Realizar compra">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="contFoot bgColorBlack colorWhite">
+            <div class="cont-arriba">
+                <ul class="iconos">
+                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
+                <p>Días y horarios de atención:</p>
+                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
+                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
+            </div>
+            <div class="cont-abajo ">
+                <p>Todos los Derechos Reservados 2021</p>
+                <i class="far fa-copyright"></i>
+            </div>
+        </div> 
+    </footer>
+
+    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/sweetalert2/js/sweetalert2.min.js"></script>
+    <script type="module" src="../js/compra.js"></script>
+</body>
+</html>

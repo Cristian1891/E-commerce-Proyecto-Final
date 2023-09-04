@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/tienda.png" rel="icon">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="lib/fontawesome/fontawesome.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/sweetalert2/css/sweetalert2.min.css">
+    <title>ANCELCRIS</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand ms-5" href="#">
+              <img src="img/logo.png" alt="" width="100" height="100">
+            </a>
+        </div>
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
+              <li class="nav-item pt-4 pe-4"><a href="#nosotros" class="scrolear boldItalic">Nosotros</a></li>
+              <li class="nav-item pt-4 pe-4"><a href="#productos" class="scrolear boldItalic">Productos</a></li>
+              <li class="nav-item dropdown ">
+                <a href="#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contacto
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a href="paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
+                </ul>
+              </li>
+              <li class="nav-item pt-4 pe-4"><a href="#menu" class="scrolear boldItalic">Menú</a></li>
+                <li id="menu-color" class="nav-item dropdown">
+                    <img src="img/carrito.png" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="notificacion"></span>
+                    <div id="carrito" class="dropdown-menu dropdown-menu-end tabla-carrito" aria-labelledby="navbarDropdownMenuLink">
+                        <table id="lista-carrito" class="table mediumItalic text-nowrap">
+                            <thead>
+                                <tr class="d-flex flex-row justify-content-between">
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="d-flex flex-row justify-content-center">
+                            <a href="#" id="vaciar-carrito" class="btn btn-danger mediumItalic col-5 me-2 py-2 my-3">Vaciar Carrito</a>
+                            <a href="paginas/compra.html" id="procesar-pedido" class="btn btn-success col-5 mediumItalic py-2 my-3">Procesar Compra</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div id="seccion-principal">
+        <div class="contPrin carousel slide m-0 colorWhite" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/ancelcris.jpg" class="d-block w-100" alt="exterior">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="blackItalic">ANCELCRIS</h1>
+                        <p class="boldItalic">Productos de excelente calidad al mejor precio</p> 
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/bebidas.jpg" class="d-block w-100" alt="bebidas">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="blackItalic">Gaseosas y bebidas alcohólicas</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/fiambres.jpg" class="d-block w-100" alt="fiambres">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="blackItalic">Embutidos</h1>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/limpieza.jpg" class="d-block w-100" alt="limpieza">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="blackItalic">Articulos de limpieza a su disposición</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="nosotros">
+        <div class="cont-nos">
+            <div class="cont-izq">
+                <h2 class="boldItalic colorBlack pb-4">Sobre nosotros</h2>
+                <p class="pb-4">ANCELCRIS es un establecimiento comercial de ventas al por menor atendido en
+                forma personalizada por sus propios dueños. Mas de 20 años en la actividad comercial. Raul 
+                Antonio Ovejero junto con su familia  brindan una optima atención, junto con una amplia gama
+                de productos de gran calidad y un menu de comidas que cumplen con las expectativas y los gustos
+                de los clientes..</p>
+            </div>
+            <div class="cont-der">
+                <img src="img/interior.jpg" alt="interior">
+            </div>
+        </div>
+    </section>
+    <section id="productos">
+        <div class="cont-prod" id="prods">
+            <div class="cont-barra bgColorBlack colorWhite">
+                <div class="tit-sect">
+                    <h2 class="boldItalic">Productos</h2>
+                </div>
+                <div class="cont-lista">
+                    <ul class="navegacion boldItalic list-unstyled pt-2">
+                        <li class="barra"><a href="#" class="colorCian">Bebidas</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Lacteos</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Fiambres</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Golosinas</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Snacks</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Limpieza</a></li>
+                        <li class="barra"><a href="#" class="colorWhite">Otros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="titulo"></div>
+            <div id="productos-ecommerce" class="info-prod my-5 colorBlack">
+            </div>
+            <div id="paginacion" class="d-flex justify-content-center">
+                <button id="anterior" class="btn btn-success me-3">Anterior</button>
+                <button id="siguiente" class="btn btn-success">Siguiente</button>
+            </div>
+        </div>
+    </section>
+    <section id="envios" class="my-5">
+        <div class="cont-envios">
+            <h2 class="boldItalic colorWhite pb-3">Envíos a domicilio</h2>
+            <p class="colorWhite pb-3">Contacta a ANCELCRIS para gestionar tu pedido y que llegue a tu domicilio en 
+            tiempo y forma</p>
+            <a href="paginas/contacto.html" class="boton colorBlack bgColorYellowDark">Mas información</a>
+        </div>
+    </section>
+    <div id="menu">
+        <div class="cont-menu colorWhite">
+            <h2 class="boldItalic pb-5 colorBlack">Menú</h2>
+            <div id="cards-menu" class="info-menu pt-4">
+            </div>
+            <div id="paginacion_menu" class="d-flex justify-content-center my-5">
+                <button id="anterior_menu" class="btn btn-success me-3">Anterior</button>
+                <button id="siguiente_menu" class="btn btn-success">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    <div id="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.5882654583434!2d-58.431095885045025!3d-34.81629917628343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd390a04e6e4d%3A0xa11198fcb201c082!2sAlmte.%20F.%20J.%20Segu%C3%AD%202247%2C%20B1836%20Llavallol%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1631741629963!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <footer id="footer">
+        <div class="contFoot bgColorBlack colorWhite">
+            <div class="cont-arriba">
+                <ul class="iconos">
+                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
+                </ul>
+            </div>
+            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
+                <p>Días y horarios de atención:</p>
+                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
+                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
+            </div>
+            <div class="cont-abajo ">
+                <p>Todos los Derechos Reservados 2021</p>
+                <i class="far fa-copyright"></i>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="./lib/bootstrap/js/popper.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./lib/sweetalert2/js/sweetalert2.min.js"></script>
+    <script type="module" src="js/pedido.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

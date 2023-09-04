@@ -1,0 +1,86 @@
+[
+    {
+        "id": 37,
+        "nombre": "Alfajor Triple Águila",
+        "precio": 80,
+        "img": "aguila.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 38,
+        "nombre": "Alfajor Triple Block",
+        "precio": 90,
+        "img": "alfajorBlock.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 39,
+        "nombre": "Chocolate Arcor Negro",
+        "precio": 50,
+        "img": "arcorChocolate.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 40,
+        "nombre": "Chocolate Arcor Dúo 95gr",
+        "precio": 160,
+        "img": "arcorDuo.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 41,
+        "nombre": "Chocolate Cofler Block 38gr",
+        "precio": 70,
+        "img": "block.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 42,
+        "nombre": "Cofler Rocklets 100gr",
+        "precio": 150,
+        "img": "coflerRocklets.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 43,
+        "nombre": "Alfajor Guaymallen 38gr",
+        "precio": 20,
+        "img": "guaymallen.jpg", 
+        "categoria": "golosinas"
+    },
+    {
+        "id": 44,
+        "nombre": "Alfajor Jorgelin 85gr",
+        "precio": 90,
+        "img": "jorgelin.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 45,
+        "nombre": "Alfajor Jorgito 55gr",
+        "precio": 70,
+        "img": "jorgito.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 46,
+        "nombre": "Alfajor Milka Mouse 42gr",
+        "precio": 60,
+        "img": "milka.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 47,
+        "nombre": "Pitusas de Vainilla 160gr",
+        "precio": 100,
+        "img": "pitusas.jpg",
+        "categoria": "golosinas"
+    },
+    {
+        "id": 48,
+        "nombre": "Tofi Glaseado 44gr",
+        "precio": 40,
+        "img": "tofiGlaseado.jpg",
+        "categoria": "golosinas"
+    }
+]

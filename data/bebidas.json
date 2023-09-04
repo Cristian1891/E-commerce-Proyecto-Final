@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "nombre": "Lata Coca Cola 354ml",
+        "precio": 80,
+        "img": "lataCoca.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 2,
+        "nombre": "Lata Sprite 354ml",
+        "precio": 80,
+        "img": "lataSprite.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 3,
+        "nombre": "Lata Fanta 354ml",
+        "precio": 80,
+        "img": "lataFanta.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 4,
+        "nombre": "Botella Coca Cola 2.25lt",
+        "precio": 190,
+        "img": "botellaCoca.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 5,
+        "nombre": "Botella Heineken 1lt",
+        "precio": 250,
+        "img": "botellaHeineken.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 6,
+        "nombre": "Imperial Golden 1lt",
+        "precio": 250,
+        "img": "botellaImperialGolden.png",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 7,
+        "nombre": "Benjamin Nieto Tinto 750ml",
+        "precio": 270,
+        "img": "benjamin.jpg", 
+        "categoria": "bebidas"
+    },
+    {
+        "id": 8,
+        "nombre": "Cosecha Tardía Blanco 750ml",
+        "precio": 390,
+        "img": "cosechaTardia.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 9,
+        "nombre": "Fernet Branca 750ml",
+        "precio": 790,
+        "img": "fernetBranca750.png",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 10,
+        "nombre": "Fernet Branca 450ml",
+        "precio": 480,
+        "img": "fernetBranca450.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 11,
+        "nombre": "Vodka Smirnoff 700ml",
+        "precio": 650,
+        "img": "smirnoff.jpg",
+        "categoria": "bebidas"
+    },
+    {
+        "id": 12,
+        "nombre": "Stella Artois 975ml",
+        "precio": 250,
+        "img": "stella.jpg",
+        "categoria": "bebidas"
+    }
+]

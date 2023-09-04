@@ -1,0 +1,86 @@
+[
+    {
+        "id": 73,
+        "nombre": "Blancaflor Leudante 1kg",
+        "precio": 90,
+        "img": "blancaFlor.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 74,
+        "nombre": "Don Vicente 500gr",
+        "precio": 140,
+        "img": "donVicente.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 75,
+        "nombre": "Escarbadientes El Coloso",
+        "precio": 45,
+        "img": "escarbadientes.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 76,
+        "nombre": "Hellmans Clasica 237gr",
+        "precio": 190,
+        "img": "hellmans.png",
+        "categoria": "otros"
+    },
+    {
+        "id": 77,
+        "nombre": "Malboro Box 20",
+        "precio": 290,
+        "img": "malboroBox.png",
+        "categoria": "otros"
+    },
+    {
+        "id": 78,
+        "nombre": "Phillips Box 20",
+        "precio": 260,
+        "img": "phillipsBox.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 79,
+        "nombre": "Arvejas Molto 200gr",
+        "precio": 50,
+        "img": "arvejas.jpg", 
+        "categoria": "otros"
+    },
+    {
+        "id": 80,
+        "nombre": "Ketchup Hellmans 250gr",
+        "precio": 100,
+        "img": "ketchup.jpeg",
+        "categoria": "otros"
+    },
+    {
+        "id": 81,
+        "nombre": "Pepas Benjamin 200gr",
+        "precio": 50,
+        "img": "pepas.jpeg",
+        "categoria": "otros"
+    },
+    {
+        "id": 82,
+        "nombre": "Savora 250gr",
+        "precio": 100,
+        "img": "savora.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 83,
+        "nombre": "Yerba Mañanita 1k",
+        "precio": 160,
+        "img": "yerbaMañanita.jpg",
+        "categoria": "otros"
+    },
+    {
+        "id": 84,
+        "nombre": "Yerba Taragui 500gr",
+        "precio": 110,
+        "img": "yerbaTaragui.jpg",
+        "categoria": "otros"
+    }
+]

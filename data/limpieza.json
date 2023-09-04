@@ -1,0 +1,86 @@
+[
+    {
+        "id": 61,
+        "nombre": "Lavandina Ayudin 55gr",
+        "precio": 80,
+        "img": "ayudin.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 62,
+        "nombre": "Cif Crema 750gr",
+        "precio": 90,
+        "img": "cif.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 63,
+        "nombre": "Detergente Ala 750ml",
+        "precio": 90,
+        "img": "detergenteAla.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 64,
+        "nombre": "Papel Higienico Elegante",
+        "precio": 120,
+        "img": "elegante.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 65,
+        "nombre": "Jabón en Polvo Ala 400gr",
+        "precio": 90,
+        "img": "jabonAla.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 66,
+        "nombre": "Detergente Magistral 300ml",
+        "precio": 120,
+        "img": "magistral.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 67,
+        "nombre": "Poett 900ml",
+        "precio": 110,
+        "img": "poet.jpg", 
+        "categoria": "limpieza"
+    },
+    {
+        "id": 68,
+        "nombre": "Procenex Original 900ml",
+        "precio": 110,
+        "img": "procenex.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 69,
+        "nombre": "Raid Mata Cucarachas 299gr",
+        "precio": 230,
+        "img": "raidCucarachas.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 70,
+        "nombre": "Raid Mata Mosquitos 222gr",
+        "precio": 230,
+        "img": "raidMosquitos.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 71,
+        "nombre": "Jabón Rexona 125gr",
+        "precio": 70,
+        "img": "rexona.jpg",
+        "categoria": "limpieza"
+    },
+    {
+        "id": 72,
+        "nombre": "Shampoo Sedal 300ml",
+        "precio": 150,
+        "img": "shampooSedal.jpg",
+        "categoria": "limpieza"
+    }
+]

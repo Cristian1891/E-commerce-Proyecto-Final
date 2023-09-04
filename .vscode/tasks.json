@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Abrir en Firefox",
+            "command": "explorer",
+            "windows": {
+                "command": "C:/Program Files/Mozilla Firefox/firefox.exe"
+            },
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Abrir en Chrome",
+            "command": "explorer",
+            "windows": {
+                "command": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+            },
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Abrir en Microsoft Edge",
+            "command": "explorer",
+            "windows": {
+                "command": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+            },
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "problemMatcher": []
+        },
+    ]
+}

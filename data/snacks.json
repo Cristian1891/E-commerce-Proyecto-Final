@@ -1,0 +1,86 @@
+[
+    {
+        "id": 49,
+        "nombre": "3D Original 165gr",
+        "precio": 290,
+        "img": "3D.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 50,
+        "nombre": "Chizitos Pehuamar 100gr",
+        "precio": 100,
+        "img": "chizitosPehuamar.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 51,
+        "nombre": "Doritos Queso 140gr",
+        "precio": 280,
+        "img": "doritos.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 52,
+        "nombre": "Maní Cervecero 100gr",
+        "precio": 40,
+        "img": "maniCervecero.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 53,
+        "nombre": "Maní Pehuamar 100gr",
+        "precio": 130,
+        "img": "maniPehuamar.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 54,
+        "nombre": "Palitos Pehuamar 100gr",
+        "precio": 80,
+        "img": "palitosPehuamar.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 55,
+        "nombre": "Papas Lays 94gr",
+        "precio": 105,
+        "img": "papasLays.jpg", 
+        "categoria": "snacks"
+    },
+    {
+        "id": 56,
+        "nombre": "Papas Pehuamar 100gr",
+        "precio": 120,
+        "img": "papasPehuamar.png",
+        "categoria": "snacks"
+    },
+    {
+        "id": 57,
+        "nombre": "Papas Pringles 124gr",
+        "precio": 400,
+        "img": "pringles.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 58,
+        "nombre": "Rex Original 125gr",
+        "precio": 130,
+        "img": "rex.jpg",
+        "categoria": "snacks"
+    },
+    {
+        "id": 59,
+        "nombre": "Saladix Dúo 25gr",
+        "precio": 60,
+        "img": "saladixBolsa.png",
+        "categoria": "snacks"
+    },
+    {
+        "id": 60,
+        "nombre": "Saladix Pizza 100gr",
+        "precio": 130,
+        "img": "saladixCaja.jpg",
+        "categoria": "snacks"
+    }
+]

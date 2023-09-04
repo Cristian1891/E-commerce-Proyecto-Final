@@ -1,0 +1,65 @@
+[
+    {
+        "id": 85,
+        "nombre": "Ñoquis con salsa",
+        "precio": 250,
+        "img": "ñoquis.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 86,
+        "nombre": "Pollo con papas",
+        "precio": 250,
+        "img": "pollo_con_papas.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 87,
+        "nombre": "Sandwich de milanesa",
+        "precio": 210,
+        "img": "sandwich_milanesa.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 88,
+        "nombre": "Choripan",
+        "precio": 120,
+        "img": "choripan.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 89,
+        "nombre": "Hamburguesa Completa",
+        "precio": 160,
+        "img": "hamburguesa.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 90,
+        "nombre": "Ravioles con Salsa",
+        "precio": 250,
+        "img": "raviolesConSalsa.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 91,
+        "nombre": "Pure con Milanesa",
+        "precio": 220,
+        "img": "pureConMilanesa.jpg", 
+        "categoria": "menu"
+    },
+    {
+        "id": 92,
+        "nombre": "Sandwich de Fiambre",
+        "precio": 180,
+        "img": "sandwichDeFiambre.jpg",
+        "categoria": "menu"
+    },
+    {
+        "id": 93,
+        "nombre": "Totilla de Papa",
+        "precio": 230,
+        "img": "tortillaDePapas.jpg",
+        "categoria": "menu"
+    }
+]
