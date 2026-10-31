@@ -1,7 +1,7 @@
 [
     {
         "id": 61,
-        "nombre": "Lavandina Ayudin 55gr",
+        "nombre": "Lavandina Ayudín 55gr",
         "precio": 80,
         "img": "ayudin.jpg",
         "categoria": "limpieza"
@@ -22,7 +22,7 @@
     },
     {
         "id": 64,
-        "nombre": "Papel Higienico Elegante",
+        "nombre": "Papel Higiénico Elegante",
         "precio": 120,
         "img": "elegante.jpg",
         "categoria": "limpieza"
@@ -45,7 +45,7 @@
         "id": 67,
         "nombre": "Poett 900ml",
         "precio": 110,
-        "img": "poet.jpg", 
+        "img": "poet.jpg",
         "categoria": "limpieza"
     },
     {

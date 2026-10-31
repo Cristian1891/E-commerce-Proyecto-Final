@@ -1,143 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finalizar compra · ANCELCRIS</title>
+    <meta name="description" content="Revisá tu pedido y completá los datos de entrega en ANCELCRIS.">
+    <meta name="theme-color" content="#1c1d1f">
+    <link rel="icon" href="../img/tienda.png" type="image/png">
+    <link rel="preload" href="../fuentes/figtree/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/7ca5c60032.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../lib/sweetalert2/css/sweetalert2.min.css">
-    <title>Compra</title>
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand ms-5" href="../index.html">
-              <img src="../img/logo.png" alt="" width="100" height="100">
-            </a>
-        </div>
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#nosotros" class="scrolear boldItalic">Nosotros</a></li>
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#productos" class="scrolear boldItalic">Productos</a></li>
-              <li class="nav-item dropdown ">
-                <a href="../index.html#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Contacto
+    <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado zona-oscura">
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Principal">
+            <div class="contenedor">
+                <a class="marca" href="../index.html">
+                    <picture>
+                        <source srcset="../img/optimizadas/logo-128.webp" type="image/webp">
+                        <img class="marca__logo" src="../img/optimizadas/logo-128.png" alt="" width="44" height="44">
+                    </picture>
+                    <span class="marca__texto">
+                        <span class="marca__nombre">ANCELCRIS</span>
+                        <span class="marca__bajada">Almacén y casa de comidas</span>
+                        <span class="visually-hidden">(ir al inicio)</span>
+                    </span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="../paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
-                </ul>
-              </li>
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#menu" class="scrolear boldItalic">Menú</a></li>
-            </ul>
-          </div>
+
+                <div class="encabezado__acciones">
+                    <!-- En esta página el carrito es el resumen del pedido -->
+                    <a class="btn btn-acento boton-carrito" href="#resumen-pedido">
+                        <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-carrito"></use></svg>
+                        <span class="boton-carrito__texto">Carrito</span>
+                        <span class="boton-carrito__contador" data-carrito-contador aria-hidden="true">0</span>
+                        <span class="visually-hidden" data-carrito-contador-texto> (0 productos)</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Menú de navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navegacion">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#menu">Menú de comidas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#ubicacion">Ubicación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <div class="encabezado-pagina">
+            <div class="contenedor">
+                <a class="enlace-volver" href="../index.html#productos">
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-flecha-izq"></use></svg>
+                    Seguir comprando
+                </a>
+                <h1 class="encabezado-pagina__titulo">Finalizar compra</h1>
+                <p class="encabezado-pagina__bajada">Revisá tu pedido y completá los datos de entrega.</p>
+            </div>
         </div>
-    </nav>
-    <main>
-        <div class="container">
-            <div class="row mt-3">
-                <div class="col">
-                    <h2 class="d-flex justify-content-center boldItalic my-5">Compra</h2>
-                    <form id="procesar-pago">
-                        <div class="form-group row">
-                            <label for="cliente" class="col-12 col-md-1 col-form-label mediumItalic h2">Cliente :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control mediumItalic " id="cliente"
-                                    placeholder="Ingresa tu nombre completo" name="destinatario" required>
-                            </div>
-                        </div>
-                        <div class="form-group row my-3">
-                            <label for="email" class="col-12 col-md-1 col-form-label mediumItalic h2">Correo :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="email" class="form-control mediumItalic" id="correo" placeholder="Ingresa tu correo" name="email" required>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-3">
-                            <label for="direccion" class="col-12 col-md-1 col-form-label mediumItalic h2">Direccion :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control mediumItalic " id="direccion" name="direccion" placeholder="Ingresa tu direccion" required>
-                            </div>
-                        </div>
-                        <div class="form-group row mb-5">
-                            <label for="telefono" class="col-12 col-md-1 col-form-label mediumItalic h2">Teléfono :</label>
-                            <div class="col-12 col-md-10">
-                                <input type="tel" class="form-control mediumItalic " id="telefono" name="telefono" placeholder="Ingresa tu telefono" required>
-                            </div>
-                        </div>
-                        <div id="carrito" class="form-group table-responsive" >
-                            <table class="table mediumItalic" id="lista-compra" >
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Imagen</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Sub Total</th>
-                                        <th scope="col">Eliminar</th>
-                                    </tr>
 
-                                </thead>
-                                <tbody>
+        <div class="contenedor seccion">
+            <!-- Estado vacío: se muestra si no hay productos en el carrito -->
+            <div class="estado" data-compra-vacia hidden>
+                <span class="estado__icono"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-carrito"></use></svg></span>
+                <h2 class="estado__titulo">Tu carrito está vacío</h2>
+                <p>Agregá productos o platos del menú para hacer un pedido.</p>
+                <a class="btn btn-primary" href="../index.html#productos">Ver productos</a>
+            </div>
 
-                                </tbody>
-                                
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th class="mediumItalic">TOTAL :</th>
-                                    <th scope="col">
-                                        <input  type="text" id="total"  name="total" class="mediumItalic font-weight-bold border-0" readonly style="background-color: white;">
-                                    </th>
-                                    <th></th>
-                                </tr>
+            <div class="row g-4 g-lg-5" data-compra-contenido>
+                <!-- En móvil el resumen aparece primero; en escritorio pasa a la derecha -->
+                <div class="col-lg-5 order-lg-2">
+                    <section class="panel compra__resumen" id="resumen-pedido" aria-labelledby="titulo-resumen">
+                        <h2 class="panel__titulo" id="titulo-resumen" tabindex="-1" data-carrito-titulo><span class="paso" aria-hidden="true"><svg class="icono" focusable="false"><use href="../img/iconos.svg#i-bolsa"></use></svg></span> Tu pedido</h2>
+                        <ul class="resumen__lista" aria-label="Productos del pedido" data-carrito-lista></ul>
+                        <dl class="resumen__detalle">
+                            <div class="resumen__fila"><dt>Cantidad</dt><dd data-carrito-unidades>0 unidades</dd></div>
+                            <div class="resumen__fila"><dt>Pago</dt><dd>Sin cobro en línea</dd></div>
+                        </dl>
+                        <p class="resumen__total">Total <strong data-carrito-total>$ 0</strong></p>
+                        <p class="visually-hidden" aria-live="polite" data-carrito-anuncio></p>
+                    </section>
+                </div>
 
-                            </table>
-                        </div>
+                <div class="col-lg-7 order-lg-1">
+                    <section class="panel" aria-labelledby="titulo-datos">
+                        <h2 class="panel__titulo" id="titulo-datos"><span class="paso" aria-hidden="true"><svg class="icono" focusable="false"><use href="../img/iconos.svg#i-envio"></use></svg></span> Datos de entrega</h2>
+                        <div class="aviso mb-4" data-aviso-modo></div>
 
-                        <div class="row justify-content-center" id="loaders">
-                            <img id="cargando" src="../img/cargando.gif" width="70">
-                        </div>
+                        <form id="form-compra" novalidate data-form-compra>
+                            <p class="formulario__nota">Todos los campos son obligatorios.</p>
 
-                        <div class="d-flex flex-row justify-content-between my-5">
-                            <div class="col-md-4 mb-2">
-                                <a href="../index.html" class="mediumItalic btn btn-warning btn-block">Seguir comprando</a>
+                            <div class="campo">
+                                <label class="form-label" for="nombre">Nombre y apellido</label>
+                                <input class="form-control" id="nombre" name="nombre" type="text" autocomplete="name" maxlength="80" required aria-describedby="error-nombre">
+                                <div class="invalid-feedback" id="error-nombre"></div>
                             </div>
-                            <div class=" col-md-2">
-                                <input type="submit" class="mediumItalic btn btn-success btn-block text-uppercase" id="procesar-compra" value="Realizar compra">
-                            </div>
-                        </div>
-                    </form>
 
+                            <div class="campo">
+                                <label class="form-label" for="email">Correo electrónico</label>
+                                <input class="form-control" id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required aria-describedby="error-email">
+                                <div class="invalid-feedback" id="error-email"></div>
+                            </div>
+
+                            <div class="campo">
+                                <label class="form-label" for="telefono">Teléfono</label>
+                                <input class="form-control" id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" required aria-describedby="ayuda-telefono error-telefono">
+                                <div class="form-text" id="ayuda-telefono">Con código de área. Ej.: 11 2345-6789</div>
+                                <div class="invalid-feedback" id="error-telefono"></div>
+                            </div>
+
+                            <div class="campo">
+                                <label class="form-label" for="direccion">Dirección de entrega</label>
+                                <input class="form-control" id="direccion" name="direccion" type="text" autocomplete="street-address" maxlength="120" required aria-describedby="ayuda-direccion error-direccion">
+                                <div class="form-text" id="ayuda-direccion">Calle, altura y, si corresponde, piso y departamento. Ej.: Av. Belgrano 1234, 2° B</div>
+                                <div class="invalid-feedback" id="error-direccion"></div>
+                            </div>
+
+                            <div class="compra__confirmacion">
+                                <p class="resumen__total">Total del pedido <strong data-carrito-total>$ 0</strong></p>
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                    <span class="spinner-border text-light" aria-hidden="true" data-spinner hidden></span>
+                                    <span data-texto-enviar>Confirmar pedido</span>
+                                </button>
+                                <p class="form-text text-center mt-2 mx-auto">Antes de enviar vas a ver un resumen para confirmar.</p>
+                                <p class="visually-hidden" aria-live="assertive" data-anuncio-formulario></p>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
     </main>
-    <footer id="footer">
-        <div class="contFoot bgColorBlack colorWhite">
-            <div class="cont-arriba">
-                <ul class="iconos">
-                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
-                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
-                </ul>
+
+    <footer class="pie zona-oscura">
+        <div class="contenedor">
+            <div class="pie__grilla">
+                <div>
+                    <div class="pie__marca">
+                        <picture>
+                            <source srcset="../img/optimizadas/logo-128.webp" type="image/webp">
+                            <img src="../img/optimizadas/logo-128.png" alt="" width="56" height="56" loading="lazy">
+                        </picture>
+                        <div>
+                            <p class="marca__nombre m-0">ANCELCRIS</p>
+                            <p class="marca__bajada m-0">Almacén y casa de comidas</p>
+                        </div>
+                    </div>
+                    <p>Simulador de comercio electrónico creado como proyecto final del curso de JavaScript de Coderhouse. No se realizan cobros en línea.</p>
+                </div>
+                <div>
+                    <h2 class="pie__titulo">Horarios de atención</h2>
+                    <p>Lunes a viernes<br>11:00 a 23:00 h</p>
+                    <p>Sábados y domingos<br>11:00 a 21:00 h</p>
+                </div>
+                <nav aria-label="Secundaria">
+                    <h2 class="pie__titulo">Navegación</h2>
+                    <ul class="pie__lista">
+                        <li><a href="../index.html#productos">Productos</a></li>
+                        <li><a href="../index.html#menu">Menú de comidas</a></li>
+                        <li><a href="../index.html#nosotros">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
-                <p>Días y horarios de atención:</p>
-                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
-                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
+            <div class="pie__legal">
+                <p>© <span data-anio>2023</span> ANCELCRIS. Todos los derechos reservados.</p>
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <p>Desarrollado por Cristian Ovejero</p>
+                    <ul class="redes">
+                        <li><a href="https://www.facebook.com/cristian.ovejero/" target="_blank" rel="noopener" aria-label="Facebook de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-facebook"></use></svg></a></li>
+                        <li><a href="https://www.instagram.com/crisxz1891/" target="_blank" rel="noopener" aria-label="Instagram de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-instagram"></use></svg></a></li>
+                        <li><a href="https://twitter.com/CristianOv1704" target="_blank" rel="noopener" aria-label="X (Twitter) de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-x"></use></svg></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="cont-abajo ">
-                <p>Todos los Derechos Reservados 2021</p>
-                <i class="far fa-copyright"></i>
-            </div>
-        </div> 
+        </div>
     </footer>
 
     <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>

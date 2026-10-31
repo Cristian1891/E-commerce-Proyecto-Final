@@ -15,14 +15,14 @@
     },
     {
         "id": 87,
-        "nombre": "Sandwich de milanesa",
+        "nombre": "Sándwich de milanesa",
         "precio": 210,
         "img": "sandwich_milanesa.jpg",
         "categoria": "menu"
     },
     {
         "id": 88,
-        "nombre": "Choripan",
+        "nombre": "Choripán",
         "precio": 120,
         "img": "choripan.jpg",
         "categoria": "menu"
@@ -43,21 +43,21 @@
     },
     {
         "id": 91,
-        "nombre": "Pure con Milanesa",
+        "nombre": "Puré con milanesa",
         "precio": 220,
-        "img": "pureConMilanesa.jpg", 
+        "img": "pureConMilanesa.jpg",
         "categoria": "menu"
     },
     {
         "id": 92,
-        "nombre": "Sandwich de Fiambre",
+        "nombre": "Sándwich de fiambre",
         "precio": 180,
         "img": "sandwichDeFiambre.jpg",
         "categoria": "menu"
     },
     {
         "id": 93,
-        "nombre": "Totilla de Papa",
+        "nombre": "Tortilla de papa",
         "precio": 230,
         "img": "tortillaDePapas.jpg",
         "categoria": "menu"

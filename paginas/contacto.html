@@ -1,144 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="../css/estilos.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto · ANCELCRIS</title>
+    <meta name="description" content="Formulario de consulta, dirección y horarios de atención de ANCELCRIS.">
+    <meta name="theme-color" content="#1c1d1f">
+    <link rel="icon" href="../img/tienda.png" type="image/png">
+    <link rel="preload" href="../fuentes/figtree/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../lib/sweetalert2/css/sweetalert2.min.css">  
-    <script src="https://kit.fontawesome.com/7ca5c60032.js" crossorigin="anonymous"></script>
-    <title>Contacto</title>
+    <link rel="stylesheet" href="../lib/sweetalert2/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand ms-5" href="../index.html">
-              <img src="../img/logo.png" alt="" width="100" height="100">
-            </a>
-        </div>
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#nosotros" class="scrolear boldItalic">Nosotros</a></li>
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#productos" class="scrolear boldItalic">Productos</a></li>
-              <li class="nav-item dropdown ">
-                <a href="#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Contacto
+    <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado zona-oscura">
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Principal">
+            <div class="contenedor">
+                <a class="marca" href="../index.html">
+                    <picture>
+                        <source srcset="../img/optimizadas/logo-128.webp" type="image/webp">
+                        <img class="marca__logo" src="../img/optimizadas/logo-128.png" alt="" width="44" height="44">
+                    </picture>
+                    <span class="marca__texto">
+                        <span class="marca__nombre">ANCELCRIS</span>
+                        <span class="marca__bajada">Almacén y casa de comidas</span>
+                        <span class="visually-hidden">(ir al inicio)</span>
+                    </span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="../paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
-                </ul>
-              </li>
-              <li class="nav-item pt-4 pe-4"><a href="../index.html#menu" class="scrolear boldItalic">Menú</a></li>
-            </ul>
-          </div>
+
+                <div class="encabezado__acciones">
+                    <button type="button" class="btn btn-acento boton-carrito" data-bs-toggle="offcanvas" data-bs-target="#panel-carrito" aria-controls="panel-carrito">
+                        <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-carrito"></use></svg>
+                        <span class="boton-carrito__texto">Carrito</span>
+                        <span class="boton-carrito__contador" data-carrito-contador aria-hidden="true">0</span>
+                        <span class="visually-hidden" data-carrito-contador-texto> (0 productos)</span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Menú de navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navegacion">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#menu">Menú de comidas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#ubicacion">Ubicación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html" aria-current="page">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <div class="encabezado-pagina">
+            <div class="contenedor">
+                <a class="enlace-volver" href="../index.html">
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-flecha-izq"></use></svg>
+                    Volver a la tienda
+                </a>
+                <h1 class="encabezado-pagina__titulo">Contacto</h1>
+                <p class="encabezado-pagina__bajada">Consultas sobre productos, el menú de comidas o envíos a domicilio.</p>
+            </div>
         </div>
-    </nav>
-    <section class="contacto">
-        <h2 class="boldItalic colorBlack">Contacto</h2>
-        <div class="cont-pagContacto colorBlack">
-            <img src="../img/contacto.jpg" alt="destacada3">
-            <h3 class="mediumItalic text-center">Llene el formulario de Contacto</h3>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
-                        <div class="shadow-lg border border-info p-3 mb-2 mt-4  bg-body rounded">
-                            <form class="needs-validation mediumItalic " novalidate>
-                                <div class="col-md-12 mb-3">
-                                    <label for="nombre" class="form-label">Nombre:</label>
-                                    <input id="nombre" name="nombre" type="text" autocomplete="off" 
-                                    class="form-control" placeholder="Ingrese su nombre" pattern="[A-Za-z\s]+"
-                                    required>
-                                    <div class="valid-feedback">
-                                        Campo Valido
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Completar con su nombre
-                                    </div>
+
+        <div class="contenedor seccion">
+            <div class="row g-4 g-lg-5">
+                <div class="col-lg-7">
+                    <section class="panel" aria-labelledby="titulo-formulario">
+                        <h2 class="panel__titulo" id="titulo-formulario">Formulario de consulta</h2>
+                        <div class="aviso mb-4" data-aviso-modo></div>
+
+                        <form novalidate data-form-contacto>
+                            <p class="formulario__nota">Todos los campos son obligatorios.</p>
+
+                            <div class="row g-3 g-md-4">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="nombre">Nombre</label>
+                                    <input class="form-control" id="nombre" name="nombre" type="text" autocomplete="given-name" maxlength="40" required aria-describedby="error-nombre">
+                                    <div class="invalid-feedback" id="error-nombre"></div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="apellido" class="form-label">Apellido:</label>
-                                    <input id="apellido" type="text" autocomplete="off" 
-                                    class="form-control" placeholder="Ingrese su apellido" pattern="[A-Za-z]+" required>
-                                    <div class="valid-feedback">
-                                        Campo valido
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Completar con su apellido
-                                    </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="apellido">Apellido</label>
+                                    <input class="form-control" id="apellido" name="apellido" type="text" autocomplete="family-name" maxlength="40" required aria-describedby="error-apellido">
+                                    <div class="invalid-feedback" id="error-apellido"></div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="telefono">Telefono:</label>
-                                    <input id="telefono" type="tel" autocomplete="off" 
-                                    placeholder="Ingrese el numero de su telefono móvil" class="form-control" 
-                                    pattern="([0-9]{8}|[0-9]{10})" required>
-                                    <div class="valid-feedback">
-                                        Campo valido
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Completar con su telefono (mínimo de 8 números o máximo de 10 números)
-                                    </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="telefono">Teléfono</label>
+                                    <input class="form-control" id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" required aria-describedby="ayuda-telefono error-telefono">
+                                    <div class="form-text" id="ayuda-telefono">Con código de área. Ej.: 11 2345-6789</div>
+                                    <div class="invalid-feedback" id="error-telefono"></div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="email">Email:</label>
-                                    <input id="email" type="email" autocomplete="off" 
-                                    placeholder="Ingrese su email" class="form-control" required>
-                                    <div class="valid-feedback">
-                                        Campo valido
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Completar con su email (ejemplo@gmail.com o ejemplo@hotmail.com)
-                                    </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="email">Correo electrónico</label>
+                                    <input class="form-control" id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required aria-describedby="error-email">
+                                    <div class="invalid-feedback" id="error-email"></div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="mensaje">Mensaje:</label>
-                                    <textarea id="mensaje" placeholder="Tu Mensaje" autocomplete="off" 
-                                    class="form-control border rounded" required></textarea>
-                                    <div class="valid-feedback">
-                                        Campo valido
+                                <div class="col-12">
+                                    <label class="form-label" for="mensaje">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="5" maxlength="1000" required aria-describedby="ayuda-mensaje error-mensaje"></textarea>
+                                    <div class="form-text" id="ayuda-mensaje">
+                                        Mínimo 10 caracteres.
+                                        <span class="contador-caracteres" data-contador-mensaje aria-hidden="true">0 / 1000</span>
                                     </div>
-                                    <div class="invalid-feedback">
-                                        Completar con su mensaje 
-                                    </div>
+                                    <div class="invalid-feedback" id="error-mensaje"></div>
                                 </div>
-                                <div class="col-md-6 mb-3 mt-5">
-                                    <input class="boton1 mediumItalic bgColorRed colorWhite me-3" type="submit" value="Enviar">
-                                    <input type="reset" name="resetear" value="Borrar todo" class="boton1 mediumItalic bgColorRed colorWhite me-2">
+                            </div>
+
+                            <div class="mt-4">
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                    <span class="spinner-border text-light" aria-hidden="true" data-spinner hidden></span>
+                                    <span data-texto-enviar>Enviar consulta</span>
+                                </button>
+                            </div>
+                            <p class="visually-hidden" aria-live="assertive" data-anuncio-formulario></p>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="col-lg-5">
+                    <aside class="panel" aria-labelledby="titulo-local">
+                        <h2 class="panel__titulo" id="titulo-local">Visitanos en el local</h2>
+                        <ul class="datos-local">
+                            <li>
+                                <svg class="icono icono--lg" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-ubicacion"></use></svg>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <p>Almte. F. J. Seguí 2247, B1836 Llavallol, Provincia de Buenos Aires</p>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+                            </li>
+                            <li>
+                                <svg class="icono icono--lg" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-reloj"></use></svg>
+                                <div>
+                                    <strong>Horarios de atención</strong>
+                                    <p>Lunes a viernes: 11:00 a 23:00 h</p>
+                                    <p>Sábados y domingos: 11:00 a 21:00 h</p>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="icono icono--lg" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-envio"></use></svg>
+                                <div>
+                                    <strong>Envíos a domicilio</strong>
+                                    <p>Contactá a ANCELCRIS para gestionar tu pedido y que llegue a tu domicilio en tiempo y forma.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="btn btn-outline-primary mt-4" href="https://www.google.com/maps/search/?api=1&amp;query=Almte.%20F.%20J.%20Segu%C3%AD%202247%2C%20Llavallol%2C%20Buenos%20Aires" target="_blank" rel="noopener">
+                            Abrir en Google Maps
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-externo"></use></svg>
+                            <span class="visually-hidden">(se abre en otra pestaña)</span>
+                        </a>
+                    </aside>
                 </div>
             </div>
         </div>
-    </section>
-    <footer id="footer">
-        <div class="contFoot bgColorBlack colorWhite">
-            <div class="cont-arriba">
-                <ul class="iconos">
-                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
-                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
-                </ul>
+    </main>
+
+    <footer class="pie zona-oscura">
+        <div class="contenedor">
+            <div class="pie__grilla">
+                <div>
+                    <div class="pie__marca">
+                        <picture>
+                            <source srcset="../img/optimizadas/logo-128.webp" type="image/webp">
+                            <img src="../img/optimizadas/logo-128.png" alt="" width="56" height="56" loading="lazy">
+                        </picture>
+                        <div>
+                            <p class="marca__nombre m-0">ANCELCRIS</p>
+                            <p class="marca__bajada m-0">Almacén y casa de comidas</p>
+                        </div>
+                    </div>
+                    <p>Simulador de comercio electrónico creado como proyecto final del curso de JavaScript de Coderhouse. No se realizan cobros en línea.</p>
+                </div>
+                <div>
+                    <h2 class="pie__titulo">Horarios de atención</h2>
+                    <p>Lunes a viernes<br>11:00 a 23:00 h</p>
+                    <p>Sábados y domingos<br>11:00 a 21:00 h</p>
+                </div>
+                <nav aria-label="Secundaria">
+                    <h2 class="pie__titulo">Navegación</h2>
+                    <ul class="pie__lista">
+                        <li><a href="../index.html#productos">Productos</a></li>
+                        <li><a href="../index.html#menu">Menú de comidas</a></li>
+                        <li><a href="../index.html#nosotros">Nosotros</a></li>
+                        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
-                <p>Días y horarios de atención:</p>
-                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
-                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
-            </div>
-            <div class="cont-abajo ">
-                <p>Todos los Derechos Reservados 2021</p>
-                <i class="far fa-copyright"></i>
+            <div class="pie__legal">
+                <p>© <span data-anio>2023</span> ANCELCRIS. Todos los derechos reservados.</p>
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <p>Desarrollado por Cristian Ovejero</p>
+                    <ul class="redes">
+                        <li><a href="https://www.facebook.com/cristian.ovejero/" target="_blank" rel="noopener" aria-label="Facebook de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-facebook"></use></svg></a></li>
+                        <li><a href="https://www.instagram.com/crisxz1891/" target="_blank" rel="noopener" aria-label="Instagram de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-instagram"></use></svg></a></li>
+                        <li><a href="https://twitter.com/CristianOv1704" target="_blank" rel="noopener" aria-label="X (Twitter) de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-x"></use></svg></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script> 
+    <!-- Carrito: panel lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="panel-carrito" aria-labelledby="titulo-carrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="titulo-carrito" tabindex="-1" data-carrito-titulo>Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body carrito__cuerpo">
+            <ul class="carrito__lista" aria-label="Productos en el carrito" data-carrito-lista></ul>
+            <div class="carrito-vacio" data-carrito-vacio hidden>
+                <span class="estado__icono"><svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-carrito"></use></svg></span>
+                <p class="estado__titulo">Tu carrito está vacío</p>
+                <p>Explorá el catálogo o el menú de comidas y agregá lo que necesites.</p>
+                <a class="btn btn-primary" href="../index.html#productos">Ver productos</a>
+            </div>
+        </div>
+        <div class="carrito__pie" data-carrito-pie hidden>
+            <p class="carrito__total">Total <strong data-carrito-total>$ 0</strong></p>
+            <div class="carrito__acciones">
+                <a class="btn btn-primary btn-lg" href="compra.html">
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-bolsa"></use></svg>
+                    Finalizar compra
+                </a>
+                <button type="button" class="btn btn-peligro-texto" data-carrito-vaciar>
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="../img/iconos.svg#i-quitar"></use></svg>
+                    Vaciar carrito
+                </button>
+            </div>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-carrito-anuncio></p>
+    </div>
+
+    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../lib/sweetalert2/js/sweetalert2.min.js"></script>
-    <script src="../js/contacto.js"></script>
+    <script type="module" src="../js/contacto.js"></script>
 </body>
 </html>
