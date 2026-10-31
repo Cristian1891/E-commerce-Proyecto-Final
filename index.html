@@ -1,189 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="img/tienda.png" rel="icon">
-    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ANCELCRIS · Almacén y casa de comidas</title>
+    <meta name="description" content="ANCELCRIS, almacén y casa de comidas familiar: catálogo de productos, menú de comidas y carrito de compras. Simulador de comercio electrónico.">
+    <meta name="theme-color" content="#1c1d1f">
+    <link rel="icon" href="img/tienda.png" type="image/png">
+    <link rel="preload" href="fuentes/figtree/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Orden de estilos: bibliotecas primero, personalización después -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-    <link rel="stylesheet" href="css/normalize.css">
-    <script src="lib/fontawesome/fontawesome.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="lib/sweetalert2/css/sweetalert2.min.css">
-    <title>ANCELCRIS</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <div class="container">
-            <a class="navbar-brand ms-5" href="#">
-              <img src="img/logo.png" alt="" width="100" height="100">
-            </a>
-        </div>
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav navigate colorBlack me-auto mb-2 mb-lg-0">
-              <li class="nav-item pt-4 pe-4"><a href="#nosotros" class="scrolear boldItalic">Nosotros</a></li>
-              <li class="nav-item pt-4 pe-4"><a href="#productos" class="scrolear boldItalic">Productos</a></li>
-              <li class="nav-item dropdown ">
-                <a href="#envios" class="scrolear nav-link cambio dropdown-toggle pt-4 pe-4" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Contacto
+    <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+    <header class="encabezado zona-oscura">
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Principal">
+            <div class="contenedor">
+                <a class="marca" href="index.html">
+                    <picture>
+                        <source srcset="img/optimizadas/logo-128.webp" type="image/webp">
+                        <img class="marca__logo" src="img/optimizadas/logo-128.png" alt="" width="44" height="44">
+                    </picture>
+                    <span class="marca__texto">
+                        <span class="marca__nombre">ANCELCRIS</span>
+                        <span class="marca__bajada">Almacén y casa de comidas</span>
+                        <span class="visually-hidden">(ir al inicio)</span>
+                    </span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="paginas/contacto.html" class="colorBlack boldItalic dropdown-item">Contactanos</a></li>
-                </ul>
-              </li>
-              <li class="nav-item pt-4 pe-4"><a href="#menu" class="scrolear boldItalic">Menú</a></li>
-                <li id="menu-color" class="nav-item dropdown">
-                    <img src="img/carrito.png" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span id="notificacion"></span>
-                    <div id="carrito" class="dropdown-menu dropdown-menu-end tabla-carrito" aria-labelledby="navbarDropdownMenuLink">
-                        <table id="lista-carrito" class="table mediumItalic text-nowrap">
-                            <thead>
-                                <tr class="d-flex flex-row justify-content-between">
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Precio</th>
-                                    <th>Cantidad</th>
-                                    <th>Eliminar</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                        <div class="d-flex flex-row justify-content-center">
-                            <a href="#" id="vaciar-carrito" class="btn btn-danger mediumItalic col-5 me-2 py-2 my-3">Vaciar Carrito</a>
-                            <a href="paginas/compra.html" id="procesar-pedido" class="btn btn-success col-5 mediumItalic py-2 my-3">Procesar Compra</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    <div id="seccion-principal">
-        <div class="contPrin carousel slide m-0 colorWhite" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/ancelcris.jpg" class="d-block w-100" alt="exterior">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="blackItalic">ANCELCRIS</h1>
-                        <p class="boldItalic">Productos de excelente calidad al mejor precio</p> 
-                    </div>
+
+                <div class="encabezado__acciones">
+                    <button type="button" class="btn btn-acento boton-carrito" data-bs-toggle="offcanvas" data-bs-target="#panel-carrito" aria-controls="panel-carrito">
+                        <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-carrito"></use></svg>
+                        <span class="boton-carrito__texto">Carrito</span>
+                        <span class="boton-carrito__contador" data-carrito-contador aria-hidden="true">0</span>
+                        <span class="visually-hidden" data-carrito-contador-texto> (0 productos)</span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Menú de navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-                <div class="carousel-item">
-                    <img src="img/bebidas.jpg" class="d-block w-100" alt="bebidas">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="blackItalic">Gaseosas y bebidas alcohólicas</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/fiambres.jpg" class="d-block w-100" alt="fiambres">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="blackItalic">Embutidos</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/limpieza.jpg" class="d-block w-100" alt="limpieza">
-                    <div class="carousel-caption d-md-block">
-                        <h1 class="blackItalic">Articulos de limpieza a su disposición</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section id="nosotros">
-        <div class="cont-nos">
-            <div class="cont-izq">
-                <h2 class="boldItalic colorBlack pb-4">Sobre nosotros</h2>
-                <p class="pb-4">ANCELCRIS es un establecimiento comercial de ventas al por menor atendido en
-                forma personalizada por sus propios dueños. Mas de 20 años en la actividad comercial. Raul 
-                Antonio Ovejero junto con su familia  brindan una optima atención, junto con una amplia gama
-                de productos de gran calidad y un menu de comidas que cumplen con las expectativas y los gustos
-                de los clientes..</p>
-            </div>
-            <div class="cont-der">
-                <img src="img/interior.jpg" alt="interior">
-            </div>
-        </div>
-    </section>
-    <section id="productos">
-        <div class="cont-prod" id="prods">
-            <div class="cont-barra bgColorBlack colorWhite">
-                <div class="tit-sect">
-                    <h2 class="boldItalic">Productos</h2>
-                </div>
-                <div class="cont-lista">
-                    <ul class="navegacion boldItalic list-unstyled pt-2">
-                        <li class="barra"><a href="#" class="colorCian">Bebidas</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Lacteos</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Fiambres</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Golosinas</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Snacks</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Limpieza</a></li>
-                        <li class="barra"><a href="#" class="colorWhite">Otros</a></li>
+
+                <div class="collapse navbar-collapse" id="navegacion">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#menu">Menú de comidas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="paginas/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
-            <div id="titulo"></div>
-            <div id="productos-ecommerce" class="info-prod my-5 colorBlack">
+        </nav>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+        <!-- Portada compacta: deja ver el catálogo enseguida -->
+        <section class="portada zona-oscura" aria-labelledby="titulo-portada">
+            <picture class="portada__fondo">
+                <source type="image/webp"
+                    srcset="img/optimizadas/portada-640.webp 640w, img/optimizadas/portada-1024.webp 1024w, img/optimizadas/portada-1280.webp 1280w, img/optimizadas/portada-1600.webp 1600w"
+                    sizes="100vw">
+                <img src="img/optimizadas/portada-1280.jpg" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+            </picture>
+            <div class="contenedor">
+                <p class="portada__etiqueta">Almacén · Casa de comidas</p>
+                <h1 class="portada__titulo" id="titulo-portada">ANCELCRIS</h1>
+                <p class="portada__texto">Productos de excelente calidad al mejor precio, con la atención personalizada de sus propios dueños.</p>
+                <div class="portada__acciones">
+                    <a class="btn btn-acento btn-lg" href="#productos">Ver productos</a>
+                    <a class="btn btn-outline-light btn-lg" href="#menu">Menú de comidas</a>
+                </div>
             </div>
-            <div id="paginacion" class="d-flex justify-content-center">
-                <button id="anterior" class="btn btn-success me-3">Anterior</button>
-                <button id="siguiente" class="btn btn-success">Siguiente</button>
+        </section>
+
+        <!-- Catálogo: los productos se cargan con fetch desde data/*.json -->
+        <section class="seccion" id="productos" aria-labelledby="titulo-productos">
+            <div class="contenedor">
+                <header class="seccion__encabezado">
+                    <p class="seccion__etiqueta">Almacén</p>
+                    <h2 class="seccion__titulo" id="titulo-productos">Productos</h2>
+                    <p class="seccion__bajada">Elegí una categoría o buscá por nombre. Precios de referencia del simulador.</p>
+                </header>
+
+                <div class="catalogo__herramientas">
+                    <form class="buscador" role="search" data-buscador>
+                        <label class="form-label" for="buscar">Buscar productos</label>
+                        <div class="buscador__campo">
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-buscar"></use></svg>
+                            <input class="form-control" type="search" id="buscar" name="buscar" placeholder="Ej.: yerba, alfajor, queso" autocomplete="off" enterkeyhint="search">
+                        </div>
+                    </form>
+                    <div>
+                        <span class="categorias__etiqueta" id="etiqueta-categorias">Categorías</span>
+                        <ul class="categorias" aria-labelledby="etiqueta-categorias" data-categorias></ul>
+                    </div>
+                </div>
+
+                <div class="catalogo__resumen">
+                    <h3 class="catalogo__titulo" id="titulo-resultados" tabindex="-1" data-titulo-resultados>Todos los productos</h3>
+                    <p class="catalogo__conteo" role="status" data-conteo></p>
+                </div>
+
+                <noscript>
+                    <p class="aviso">Para ver el catálogo y usar el carrito es necesario activar JavaScript.</p>
+                </noscript>
+                <div data-estado-catalogo></div>
+                <ul class="grilla-productos" aria-labelledby="titulo-resultados" data-grilla-productos></ul>
+                <nav class="paginacion" aria-label="Paginación de productos" data-paginacion hidden></nav>
             </div>
-        </div>
-    </section>
-    <section id="envios" class="my-5">
-        <div class="cont-envios">
-            <h2 class="boldItalic colorWhite pb-3">Envíos a domicilio</h2>
-            <p class="colorWhite pb-3">Contacta a ANCELCRIS para gestionar tu pedido y que llegue a tu domicilio en 
-            tiempo y forma</p>
-            <a href="paginas/contacto.html" class="boton colorBlack bgColorYellowDark">Mas información</a>
-        </div>
-    </section>
-    <div id="menu">
-        <div class="cont-menu colorWhite">
-            <h2 class="boldItalic pb-5 colorBlack">Menú</h2>
-            <div id="cards-menu" class="info-menu pt-4">
+        </section>
+
+        <section class="seccion seccion--tinte" id="menu" aria-labelledby="titulo-menu">
+            <div class="contenedor">
+                <header class="seccion__encabezado">
+                    <p class="seccion__etiqueta">Casa de comidas</p>
+                    <h2 class="seccion__titulo" id="titulo-menu" tabindex="-1">Menú de comidas</h2>
+                    <p class="seccion__bajada">Platos de la casa de comidas de ANCELCRIS. Se suman al mismo carrito que los productos.</p>
+                </header>
+                <div data-estado-menu></div>
+                <ul class="grilla-productos grilla-productos--menu" aria-labelledby="titulo-menu" data-grilla-menu></ul>
             </div>
-            <div id="paginacion_menu" class="d-flex justify-content-center my-5">
-                <button id="anterior_menu" class="btn btn-success me-3">Anterior</button>
-                <button id="siguiente_menu" class="btn btn-success">Siguiente</button>
+        </section>
+
+        <section class="seccion seccion--superficie" id="nosotros" aria-labelledby="titulo-nosotros">
+            <div class="contenedor nosotros">
+                <div class="nosotros__texto">
+                    <p class="seccion__etiqueta">Negocio familiar</p>
+                    <h2 class="seccion__titulo" id="titulo-nosotros">Sobre nosotros</h2>
+                    <p>ANCELCRIS es un establecimiento comercial de venta al por menor, atendido en forma personalizada por sus propios dueños, con más de 20 años en la actividad comercial.</p>
+                    <p>Raul Antonio Ovejero, junto con su familia, brinda una óptima atención, una amplia gama de productos de gran calidad y un menú de comidas que cumple con las expectativas y los gustos de los clientes.</p>
+                    <ul class="destacados">
+                        <li>
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-calendario"></use></svg>
+                            Más de 20 años en la actividad comercial
+                        </li>
+                        <li>
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-familia"></use></svg>
+                            Atención personalizada de sus dueños
+                        </li>
+                        <li>
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-cubiertos"></use></svg>
+                            Almacén y menú de comidas
+                        </li>
+                    </ul>
+                </div>
+                <figure class="nosotros__imagen m-0">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="img/optimizadas/nosotros-640.webp 640w, img/optimizadas/nosotros-960.webp 960w"
+                            sizes="(min-width: 992px) 540px, 100vw">
+                        <img src="img/optimizadas/nosotros-960.jpg" alt="Mostrador con golosinas y heladera con bebidas" width="960" height="540" loading="lazy" decoding="async">
+                    </picture>
+                </figure>
             </div>
-        </div>
-    </div>
-    <div id="mapa">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.5882654583434!2d-58.431095885045025!3d-34.81629917628343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd390a04e6e4d%3A0xa11198fcb201c082!2sAlmte.%20F.%20J.%20Segu%C3%AD%202247%2C%20B1836%20Llavallol%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1631741629963!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <footer id="footer">
-        <div class="contFoot bgColorBlack colorWhite">
-            <div class="cont-arriba">
-                <ul class="iconos">
-                    <li><a href="https://www.facebook.com/cristian.ovejero/" class="pe-3"><i class="fab fa-facebook-square fa-2x"></i></a></li>
-                    <li><a href="https://www.instagram.com/crisxz1891/"><i class="fab fa-instagram fa-2x"></i></a></li>
-                    <li><a href="https://twitter.com/CristianOv1704" class="ps-3"><i class="fab fa-twitter fa-2x"></i></a></li>
-                </ul>
+        </section>
+
+        <section class="seccion" id="envios" aria-labelledby="titulo-envios">
+            <div class="contenedor">
+                <div class="banda-envios zona-oscura">
+                    <div class="banda-envios__imagen">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="img/optimizadas/envios-640.webp 640w, img/optimizadas/envios-1280.webp 1280w"
+                                sizes="(min-width: 768px) 50vw, 100vw">
+                            <img src="img/optimizadas/envios-1280.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="banda-envios__texto">
+                        <p class="seccion__etiqueta">
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-envio"></use></svg>
+                            Envíos
+                        </p>
+                        <h2 class="seccion__titulo" id="titulo-envios">Envíos a domicilio</h2>
+                        <p>Contactá a ANCELCRIS para gestionar tu pedido y que llegue a tu domicilio en tiempo y forma.</p>
+                        <a class="btn btn-acento" href="paginas/contacto.html">Consultar por envíos</a>
+                    </div>
+                </div>
             </div>
-            <div class="cont-centro d-flex flex-column justify-content-center align-items-center mt-5">
-                <p>Días y horarios de atención:</p>
-                <p>Lunes a Viernes 11:00hs a 23:00hs</p>
-                <p>Sábados y Domingos 11:00hs a 21:00hs</p>
+        </section>
+
+        <section class="seccion seccion--superficie" id="ubicacion" aria-labelledby="titulo-ubicacion">
+            <div class="contenedor">
+                <header class="seccion__encabezado">
+                    <p class="seccion__etiqueta">Visitanos</p>
+                    <h2 class="seccion__titulo" id="titulo-ubicacion">Dónde estamos</h2>
+                </header>
+                <div class="ubicacion">
+                    <div class="panel">
+                        <ul class="datos-local">
+                            <li>
+                                <svg class="icono icono--lg" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-ubicacion"></use></svg>
+                                <div>
+                                    <strong>Dirección</strong>
+                                    <p>Almte. F. J. Seguí 2247, B1836 Llavallol, Provincia de Buenos Aires</p>
+                                </div>
+                            </li>
+                            <li>
+                                <svg class="icono icono--lg" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-reloj"></use></svg>
+                                <div>
+                                    <strong>Horarios de atención</strong>
+                                    <p>Lunes a viernes: 11:00 a 23:00 h</p>
+                                    <p>Sábados y domingos: 11:00 a 21:00 h</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="btn btn-outline-primary mt-4" href="https://www.google.com/maps/search/?api=1&amp;query=Almte.%20F.%20J.%20Segu%C3%AD%202247%2C%20Llavallol%2C%20Buenos%20Aires" target="_blank" rel="noopener">
+                            Abrir en Google Maps
+                            <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-externo"></use></svg>
+                            <span class="visually-hidden">(se abre en otra pestaña)</span>
+                        </a>
+                    </div>
+                    <div class="ubicacion__mapa">
+                        <iframe title="Mapa de ubicación de ANCELCRIS en Almte. F. J. Seguí 2247, Llavallol"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.5882654583434!2d-58.431095885045025!3d-34.81629917628343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd390a04e6e4d%3A0xa11198fcb201c082!2sAlmte.%20F.%20J.%20Segu%C3%AD%202247%2C%20B1836%20Llavallol%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1631741629963!5m2!1ses!2sar"
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="cont-abajo ">
-                <p>Todos los Derechos Reservados 2023</p>
-                <i class="far fa-copyright"></i>
+        </section>
+    </main>
+
+    <footer class="pie zona-oscura">
+        <div class="contenedor">
+            <div class="pie__grilla">
+                <div>
+                    <div class="pie__marca">
+                        <picture>
+                            <source srcset="img/optimizadas/logo-128.webp" type="image/webp">
+                            <img src="img/optimizadas/logo-128.png" alt="" width="56" height="56" loading="lazy">
+                        </picture>
+                        <div>
+                            <p class="marca__nombre m-0">ANCELCRIS</p>
+                            <p class="marca__bajada m-0">Almacén y casa de comidas</p>
+                        </div>
+                    </div>
+                    <p>Simulador de comercio electrónico creado como proyecto final del curso de JavaScript de Coderhouse. No se realizan cobros en línea.</p>
+                </div>
+                <div>
+                    <h2 class="pie__titulo">Horarios de atención</h2>
+                    <p>Lunes a viernes<br>11:00 a 23:00 h</p>
+                    <p>Sábados y domingos<br>11:00 a 21:00 h</p>
+                </div>
+                <nav aria-label="Secundaria">
+                    <h2 class="pie__titulo">Navegación</h2>
+                    <ul class="pie__lista">
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#menu">Menú de comidas</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="paginas/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="pie__legal">
+                <p>© <span data-anio>2023</span> ANCELCRIS. Todos los derechos reservados.</p>
+                <div class="d-flex flex-wrap align-items-center gap-3">
+                    <p>Desarrollado por Cristian Ovejero</p>
+                    <ul class="redes">
+                        <li><a href="https://www.facebook.com/cristian.ovejero/" target="_blank" rel="noopener" aria-label="Facebook de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-facebook"></use></svg></a></li>
+                        <li><a href="https://www.instagram.com/crisxz1891/" target="_blank" rel="noopener" aria-label="Instagram de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-instagram"></use></svg></a></li>
+                        <li><a href="https://twitter.com/CristianOv1704" target="_blank" rel="noopener" aria-label="X (Twitter) de Cristian Ovejero (se abre en otra pestaña)"><svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-x"></use></svg></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
-    
 
-    <script src="./lib/bootstrap/js/popper.min.js"></script>
-    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./lib/sweetalert2/js/sweetalert2.min.js"></script>
-    <script type="module" src="js/pedido.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Carrito: panel lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="panel-carrito" aria-labelledby="titulo-carrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="titulo-carrito" tabindex="-1" data-carrito-titulo>Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body carrito__cuerpo">
+            <ul class="carrito__lista" aria-label="Productos en el carrito" data-carrito-lista></ul>
+            <div class="carrito-vacio" data-carrito-vacio hidden>
+                <span class="estado__icono"><svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-carrito"></use></svg></span>
+                <p class="estado__titulo">Tu carrito está vacío</p>
+                <p>Explorá el catálogo o el menú de comidas y agregá lo que necesites.</p>
+                <a class="btn btn-primary" href="#productos" data-cerrar-carrito>Ver productos</a>
+            </div>
+        </div>
+        <div class="carrito__pie" data-carrito-pie hidden>
+            <p class="carrito__total">Total <strong data-carrito-total>$ 0</strong></p>
+            <div class="carrito__acciones">
+                <a class="btn btn-primary btn-lg" href="paginas/compra.html">
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-bolsa"></use></svg>
+                    Finalizar compra
+                </a>
+                <button type="button" class="btn btn-peligro-texto" data-carrito-vaciar>
+                    <svg class="icono" aria-hidden="true" focusable="false"><use href="img/iconos.svg#i-quitar"></use></svg>
+                    Vaciar carrito
+                </button>
+            </div>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-carrito-anuncio></p>
+    </div>
+
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/sweetalert2/js/sweetalert2.min.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
-</html> 
+</html>

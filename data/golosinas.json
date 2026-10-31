@@ -43,14 +43,14 @@
     },
     {
         "id": 43,
-        "nombre": "Alfajor Guaymallen 38gr",
+        "nombre": "Alfajor Guaymallén 38gr",
         "precio": 20,
-        "img": "guaymallen.jpg", 
+        "img": "guaymallen.jpg",
         "categoria": "golosinas"
     },
     {
         "id": 44,
-        "nombre": "Alfajor Jorgelin 85gr",
+        "nombre": "Alfajor Jorgelín 85gr",
         "precio": 90,
         "img": "jorgelin.jpg",
         "categoria": "golosinas"
@@ -64,7 +64,7 @@
     },
     {
         "id": 46,
-        "nombre": "Alfajor Milka Mouse 42gr",
+        "nombre": "Alfajor Milka Mousse 42gr",
         "precio": 60,
         "img": "milka.jpg",
         "categoria": "golosinas"

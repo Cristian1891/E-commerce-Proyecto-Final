@@ -1,177 +1,140 @@
+// Página de compra: resumen editable del carrito, datos de entrega y envío del pedido.
 import { Carrito } from './carrito.js';
+import { iniciarVistaCarrito } from './carrito-vista.js';
+import { iniciarInterfaz } from './interfaz.js';
+import { confirmar, mostrarMensaje } from './alertas.js';
+import { enviarCorreo, estaConfigurado } from './emailjs.js';
+import { crearValidador, leerFormulario, validarDireccion, validarEmail, validarNombre, validarTelefono } from './validaciones.js';
+import { escaparHTML, formatearPrecio, icono, pluralizar, ruta } from './utilidades.js';
 
-const compra = new Carrito();
-const carrito = document.getElementById('carrito');
-const procesarCompraBtn = document.getElementById('procesar-compra');
-const cliente = document.getElementById('cliente');
-const correo = document.getElementById('correo');
-const direccion = document.getElementById('direccion');
-const telefono = document.getElementById('telefono');
-const total = document.getElementById('total');
+const carrito = new Carrito();
+const formulario = document.querySelector('[data-form-compra]');
+const botonEnviar = formulario.querySelector('[type="submit"]');
+const anuncioFormulario = document.querySelector('[data-anuncio-formulario]');
+const modoReal = estaConfigurado('compra');
+let enviando = false;
 
-//Validaciones formulario de compra
-let validation = {
-    isCliente:function(str){
-        let pattern =/^[a-zA-Z\s]+$/;
-        return pattern.test(str);  // retorna un booleano
-    },
-    isCorreo:function (str){
-        let pattern =/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]{2,4}$/;
-        return pattern.test(str);  
-    },
-    isDireccion:function(str){
-        let pattern = /^[a-zA-Z0-9\s]+$/;
-        return pattern.test(str);  
-    },
-    isTelefono:function(str){
-        let pattern = /^([0-9]{8}|[0-9]{10})$/;
-        return pattern.test(str); 
+const validador = crearValidador(formulario, {
+    nombre: (valor) => validarNombre(valor, { etiqueta: 'tu nombre y apellido', minimo: 3 }),
+    email: validarEmail,
+    telefono: validarTelefono,
+    direccion: validarDireccion,
+});
+
+// Muestra el aviso según el modo: envío real con EmailJS o simulación.
+function mostrarModo() {
+    const aviso = document.querySelector('[data-aviso-modo]');
+    aviso.innerHTML = modoReal
+        ? `${icono('info')}<p><strong>Sin pagos en línea.</strong> Al confirmar, el pedido se envía por correo con EmailJS.
+            ANCELCRIS es un simulador de comercio electrónico: no se realiza ningún cobro.</p>`
+        : `${icono('info')}<p><strong>Modo demostración.</strong> Al confirmar se validan tus datos, pero el pedido
+            <strong>no se envía</strong>: el servicio de correo no está configurado.</p>`;
+    botonEnviar.querySelector('[data-texto-enviar]').textContent = modoReal ? 'Confirmar pedido' : 'Confirmar pedido (simulación)';
+}
+
+// Alterna entre el contenido de la compra y el estado de carrito vacío.
+function actualizarVista() {
+    document.querySelector('[data-compra-vacia]').hidden = !carrito.estaVacio;
+    document.querySelector('[data-compra-contenido]').hidden = carrito.estaVacio;
+}
+
+function ponerEnProceso(activo) {
+    enviando = activo;
+    botonEnviar.disabled = activo;
+    formulario.setAttribute('aria-busy', String(activo));
+    botonEnviar.querySelector('[data-spinner]').hidden = !activo;
+    botonEnviar.querySelector('[data-texto-enviar]').textContent = activo
+        ? 'Enviando pedido…'
+        : modoReal ? 'Confirmar pedido' : 'Confirmar pedido (simulación)';
+}
+
+const detalleTexto = (items) =>
+    items.map(({ nombre, cantidad, precio }) => `${cantidad} x ${nombre} (${formatearPrecio(precio)} c/u) = ${formatearPrecio(precio * cantidad)}`)
+        .join('\n');
+
+function resumenHTML(datos) {
+    const filas = [
+        ['Productos', pluralizar(carrito.cantidadTotal, 'unidad', 'unidades')],
+        ['Total', formatearPrecio(carrito.total)],
+        ['Entrega en', datos.direccion],
+        ['Contacto', `${datos.telefono} · ${datos.email}`],
+    ];
+    return `
+        <p>Revisá los datos antes de ${modoReal ? 'enviar' : 'simular'} el pedido.</p>
+        <dl class="resumen-alerta">
+            ${filas.map(([termino, valor]) => `<div><dt>${termino}</dt><dd>${escaparHTML(valor)}</dd></div>`).join('')}
+        </dl>`;
+}
+
+async function procesarCompra(evento) {
+    evento.preventDefault();
+    if (enviando) return; // evita envíos duplicados
+
+    if (carrito.estaVacio) {
+        actualizarVista();
+        return;
     }
-};  
 
-cargarEventos();
-
-function cargarEventos() {
-    document.addEventListener('DOMContentLoaded', compra.leerLocalStorageCompra());
-
-    //Eliminar productos del carrito
-    carrito.addEventListener('click', (e) => { compra.eliminarProducto(e), compra.calcularTotal()});
-
-    compra.calcularTotal();
-
-    //cuando se selecciona procesar Compra
-    procesarCompraBtn.addEventListener('click', procesarCompra);
-
-    carrito.addEventListener('change', (e) => { compra.obtenerEvento(e) });
-    carrito.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
-    
-
-} 
-
-function procesarCompra() {
-
-    if (compra.obtenerProductosLocalStorage().length === 0) {
-        Swal.fire({
-            type: 'error',
-            text: 'No hay productos, selecciona alguno',
-            showConfirmButton: false,
-            timer: 2000
-        }).then(function () {
-            window.location.href = "../index.html";
-        })
+    const invalidos = validador.validarTodo();
+    if (invalidos.length > 0) {
+        anuncioFormulario.textContent = `Revisá ${pluralizar(invalidos.length, 'campo marcado', 'campos marcados')}.`;
+        invalidos[0].focus();
+        return;
     }
-    else if (cliente.value === '' || correo.value === '' || telefono.value === '' || direccion.value === '') {
-        Swal.fire({
-            type: 'error',
-            text: 'Ingrese todos los campos requeridos',
-            showConfirmButton: true
-        })
-    }
-    else if(!(validation.isCliente(cliente.value))){
-        Swal.fire({
-            type: 'error',
-            text: 'Su nombre completo solo debe contener letras',
-            showConfirmButton: true
-        })
-        cliente.value = "";
-    }
-    else if(!(validation.isCorreo(correo.value))){
-        Swal.fire({
-            type: 'error',
-            text: 'El email debe respetar la convencion ejemplo@gmail.com o ejemplo@hotmail.com',
-            showConfirmButton: true
-        })
-        correo.value = "";   
-    }
-    else if(!(validation.isDireccion(direccion.value))){
-        Swal.fire({
-            type: 'error',
-            text: 'La dirección debe contener letras y numeros',
-            showConfirmButton: true
-        })
-        direccion.value = "";
-    }
-    else if(!(validation.isTelefono(telefono.value))){
-        Swal.fire({
-            type: 'error',
-            text: 'El telefono solo debe contener un minimo de 8 numeros o un maximo de 10 numeros',
-            showConfirmButton: true,
-        })
-        telefono.value = "";
-    }
-    else {
+    anuncioFormulario.textContent = '';
 
-        const procesarPagoBtn = document.getElementById("procesar-pago");
-        procesarPagoBtn.addEventListener('submit',  function(event) {
-        event.preventDefault();//evitamos que se ejecute la funcion predeterminada por defecto del evento
+    const datos = leerFormulario(formulario);
+    const confirmado = await confirmar({
+        titulo: 'Confirmá tu pedido',
+        html: resumenHTML(datos),
+        textoConfirmar: modoReal ? 'Enviar pedido' : 'Simular pedido',
+    });
+    if (!confirmado) return;
 
-        procesarCompraBtn.value = 'Procesando...';
-
-        const cargandoGif = document.querySelector('#cargando');
-        cargandoGif.style.display = 'block';
-
-        const enviado = document.createElement('img');
-        enviado.src = '../img/mail.gif';
-        enviado.style.display = 'block';
-        enviado.style.width = '250px';
-        enviado.style.height = '200px';
-
-        //Enviamos informacion en forma de parametros a traves de la url
-        let params = {
-            user_id: 'user_IjTt1eaQsxU2eVCr7Pgu8',
-            service_id: 'default_service',
-            template_id: 'template_hq87b19',
-            template_params: {
-              destinatario: cliente.value,
-              email: correo.value,
-              total: total.value,
-              direccion: direccion.value
-            }
-        };
-      
-        let headers = {
-            'Content-type': 'application/json'/*Tenemos la propiedad Content-type, con el valor que nos indica
-            la documentacion de la API*/
-        };
-      
-        //Definimos el segundo parametro opcional del fetch de tipo object en el cual transferimos datos en formato JSON
-        let options = {
-            method: 'POST',
-            headers: headers,
-            body: JSON.stringify(params)
-        };
-      
-        fetch('https://api.emailjs.com/api/v1.0/email/send', options)
-          .then(async (httpResponse) => {//Con async-await esperamos a que se resuelva la promesa para continuar con la siguiente instruccion
-              if (httpResponse.ok) {
-                procesarCompraBtn.value = 'Realizar Compra';
-                cargandoGif.style.display = 'none';
-                document.querySelector('#loaders').appendChild(enviado);
-
-                setTimeout(() => {
-                    enviado.remove();
-                    compra.vaciarLocalStorage();
-                    window.location.href = "../index.html";
-                }, 2000);
-              } else {
-                  const text = await httpResponse.text();
-                  return await Promise.reject(text);
-              }
-          })
-          .catch((error) => {
-            procesarCompraBtn.value = 'Realizar Compra';
-            alert(JSON.stringify(error));
-          });
-
-        
+    const total = formatearPrecio(carrito.total);
+    ponerEnProceso(true);
+    try {
+        if (modoReal) {
+            // Se conservan los nombres de parámetros de la plantilla original de EmailJS
+            // (destinatario, email, total, direccion) y se suman telefono y detalle.
+            await enviarCorreo('compra', {
+                destinatario: datos.nombre,
+                email: datos.email,
+                total,
+                direccion: datos.direccion,
+                telefono: datos.telefono,
+                detalle: detalleTexto(carrito.obtenerItems()),
+            });
+        }
+        carrito.vaciar();
+        formulario.reset();
+        validador.limpiarErrores();
+        const respuesta = await mostrarMensaje({
+            tipo: modoReal ? 'success' : 'info',
+            titulo: modoReal ? '¡Pedido enviado!' : 'Simulación completada',
+            html: modoReal
+                ? `<p>Tu pedido por <strong>${total}</strong> se envió correctamente.</p><p>No se realizó ningún cobro.</p>`
+                : `<p>Tus datos son válidos, pero <strong>el pedido no se envió</strong> porque el servicio de correo no está configurado.</p>`,
+            textoBoton: 'Volver a la tienda',
         });
+        if (respuesta.isConfirmed) window.location.href = ruta('index.html');
+    } catch (error) {
+        console.error(error);
+        await mostrarMensaje({
+            tipo: 'error',
+            titulo: 'No pudimos enviar el pedido',
+            texto: 'Revisá tu conexión e intentá de nuevo. Tus datos y tu carrito se conservaron.',
+            textoBoton: 'Volver al formulario',
+        });
+        botonEnviar.focus();
+    } finally {
+        ponerEnProceso(false);
+    }
+}
 
-        
-
-    } 
-} 
- 
-
-
-
-
+iniciarInterfaz();
+iniciarVistaCarrito(carrito);
+mostrarModo();
+actualizarVista();
+carrito.suscribir(actualizarVista);
+formulario.addEventListener('submit', procesarCompra);

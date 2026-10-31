@@ -22,21 +22,21 @@
     },
     {
         "id": 76,
-        "nombre": "Hellmans Clasica 237gr",
+        "nombre": "Hellmann's Clásica 237gr",
         "precio": 190,
         "img": "hellmans.png",
         "categoria": "otros"
     },
     {
         "id": 77,
-        "nombre": "Malboro Box 20",
+        "nombre": "Marlboro Box 20",
         "precio": 290,
         "img": "malboroBox.png",
         "categoria": "otros"
     },
     {
         "id": 78,
-        "nombre": "Phillips Box 20",
+        "nombre": "Philip Morris Box 20",
         "precio": 260,
         "img": "phillipsBox.jpg",
         "categoria": "otros"
@@ -45,12 +45,12 @@
         "id": 79,
         "nombre": "Arvejas Molto 200gr",
         "precio": 50,
-        "img": "arvejas.jpg", 
+        "img": "arvejas.jpg",
         "categoria": "otros"
     },
     {
         "id": 80,
-        "nombre": "Ketchup Hellmans 250gr",
+        "nombre": "Ketchup Hellmann's 250gr",
         "precio": 100,
         "img": "ketchup.jpeg",
         "categoria": "otros"
@@ -78,7 +78,7 @@
     },
     {
         "id": 84,
-        "nombre": "Yerba Taragui 500gr",
+        "nombre": "Yerba Taragüí 500gr",
         "precio": 110,
         "img": "yerbaTaragui.jpg",
         "categoria": "otros"

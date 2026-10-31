@@ -8,7 +8,7 @@
     },
     {
         "id": 14,
-        "nombre": "Crema La Serenisima 330ml",
+        "nombre": "Crema La Serenísima 330ml",
         "precio": 160,
         "img": "cremaBatir.jpg",
         "categoria": "lacteos"
@@ -29,28 +29,28 @@
     },
     {
         "id": 17,
-        "nombre": "Leche La Serenisima 1lt",
+        "nombre": "Leche La Serenísima 1lt",
         "precio": 100,
         "img": "leche.jpg",
         "categoria": "lacteos"
     },
     {
         "id": 18,
-        "nombre": "Manteca La Serenisima 100gr",
+        "nombre": "Manteca La Serenísima 100gr",
         "precio": 140,
         "img": "manteca.jpg",
         "categoria": "lacteos"
     },
     {
         "id": 19,
-        "nombre": "Queso Punta del Agua 100gr",
+        "nombre": "Queso Sardo Punta del Agua 100gr",
         "precio": 150,
-        "img": "quesoPunta.jpg", 
+        "img": "quesoPunta.jpg",
         "categoria": "lacteos"
     },
     {
         "id": 20,
-        "nombre": "Queso La Serenisima 80gr",
+        "nombre": "Queso Rallado La Serenísima 80gr",
         "precio": 130,
         "img": "quesoReggianito.jpg",
         "categoria": "lacteos"

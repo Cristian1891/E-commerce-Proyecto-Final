@@ -43,9 +43,9 @@
     },
     {
         "id": 7,
-        "nombre": "Benjamin Nieto Tinto 750ml",
+        "nombre": "Benjamín Nieto Tinto 750ml",
         "precio": 270,
-        "img": "benjamin.jpg", 
+        "img": "benjamin.jpg",
         "categoria": "bebidas"
     },
     {
